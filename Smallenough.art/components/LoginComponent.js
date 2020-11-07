@@ -97,7 +97,7 @@ class LoginTab extends Component {
                                 iconStyle={{marginRight: 10}}
                             />
                         }
-                        buttonStyle={{backgroundColor: '#5637DD'}}
+                        buttonStyle={{backgroundColor: '#000000'}}
                     />
                 </View>
                 <View style={styles.formButton}>
@@ -109,11 +109,11 @@ class LoginTab extends Component {
                             <Icon
                                 name='user-plus'
                                 type='font-awesome'
-                                color='blue'
+                                color='black'
                                 iconStyle={{marginRight: 10}}
                             />
                         }
-                        titleStyle={{color: 'blue'}}
+                        titleStyle={{color: 'purple'}}
                     />
                 </View>
             </View>
@@ -133,7 +133,7 @@ class RegisterTab extends Component {
             lastname: '',
             email: '',
             remember: false,
-            imageUrl: baseUrl + 'images/logo.png'
+            imageUrl: baseUrl + 'images/Starrynight1-2.png'
         };
     }
 
@@ -184,7 +184,7 @@ class RegisterTab extends Component {
                     <View style={styles.imageContainer}>
                         <Image
                             source={{uri: this.state.imageUrl}}
-                            loadingIndicatorSource={require('./images/logo.png')}
+                            loadingIndicatorSource={require('./images/Starrynight1-2.png')}
                             style={styles.image}
                         />
                         <Button
@@ -267,10 +267,10 @@ const Login = createBottomTabNavigator(
     },
     {
         tabBarOptions: {
-            activeBackgroundColor: '#5637DD',
-            inactiveBackgroundColor: '#CEC8FF',
+            activeBackgroundColor: '#000000',
+            inactiveBackgroundColor: '#000000',
             activeTintColor: '#fff',
-            inactiveTintColor: '#808080',
+            inactiveTintColor: '#000000',
             labelStyle: {fontSize: 16}
         }
     }

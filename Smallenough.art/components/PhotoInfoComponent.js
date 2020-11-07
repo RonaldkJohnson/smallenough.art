@@ -103,7 +103,7 @@ function RenderPhoto(props) {
                         <Icon
                             name='pencil'
                             type='font-awesome'
-                            color='#5637DD'
+                            color='#000000'
                             raised
                             reverse
                             onPress={() => props.onShowModal()}
@@ -111,7 +111,7 @@ function RenderPhoto(props) {
                          <Icon
                             name={'share'}
                             type='font-awesome'
-                            color='#5637DD'
+                            color='#000000'
                             raised
                             reverse
                             onPress={() => sharePhoto(photo.name, photo.description, baseUrl + photo.image)} 
@@ -241,7 +241,7 @@ class PhotoInfo extends Component {
 
                                     this.resetForm()
                                 }}
-                                color='#5637DD'
+                                color='#000000'
                                 title='Submit'
                             />
                         </View>
@@ -251,7 +251,7 @@ class PhotoInfo extends Component {
                                 onPress={() => {
                                     this.resetForm();
                                 }}
-                                color='#808080'
+                                color='#000000'
                                 title='Cancel'
                             />
                         </View>

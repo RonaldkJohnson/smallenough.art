@@ -47,7 +47,7 @@ class Contact extends Component {
                                 </Text>
                                 <Button
                             title="Send Email"
-                            buttonStyle={{backgroundColor: '#5637DD', margin: 40}}
+                            buttonStyle={{backgroundColor: '#000000', margin: 40}}
                             icon={<Icon
                                 name='envelope-o'
                                 type='font-awesome'

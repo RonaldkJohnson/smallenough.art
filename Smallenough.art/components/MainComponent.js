@@ -4,7 +4,7 @@ import Gallery from './GalleryComponent';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
 import PhotoInfo from './PhotoInfoComponent';
-import Reservation from './ReservationComponent';
+
 import Favorites from './FavoritesComponent';
 import Login from './LoginComponent';
 import { View, Platform, StyleSheet, Text, ScrollView, Image,
@@ -37,11 +37,11 @@ const ContactNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#000000'
             },
-            headerTintColor: '#fff',
+            headerTintColor: '#000000',
             headerTitleStyle: {
-                color: '#fff'
+                color: '#000000'
             },
             headerLeft: <Icon
                 name='address-card'
@@ -52,6 +52,7 @@ const ContactNavigator = createStackNavigator(
         })
     }
 );
+/*
 const ReservationNavigator = createStackNavigator(
     {
         Reservation: { screen: Reservation }
@@ -61,9 +62,9 @@ const ReservationNavigator = createStackNavigator(
             headerStyle: {
                 backgroundColor: '#5637DD'
             },
-            headerTintColor: '#fff',
+            headerTintColor: '#000000',
             headerTitleStyle: {
-                color: '#fff'
+                color: '#000000'
             },
             headerLeft: <Icon
                 name='tree'
@@ -73,7 +74,7 @@ const ReservationNavigator = createStackNavigator(
             />
         })
     }
-);
+);*/
 const FavoritesNavigator = createStackNavigator(
     {
         Favorites: { screen: Favorites }
@@ -81,11 +82,11 @@ const FavoritesNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#000000'
             },
-            headerTintColor: '#fff',
+            headerTintColor: '#000000',
             headerTitleStyle: {
-                color: '#fff'
+                color: '#000000'
             },
             headerLeft: <Icon
                 name='heart'
@@ -103,11 +104,11 @@ const LoginNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#000000'
             },
-            headerTintColor: '#fff',
+            headerTintColor: '#000000',
             headerTitleStyle: {
-                color: '#fff'
+                color: '#000000'
             },
             headerLeft: <Icon
                 name='sign-in'
@@ -126,11 +127,11 @@ const AboutNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#000000'
             },
-            headerTintColor: '#fff',
+            headerTintColor: '#000000',
             headerTitleStyle: {
-                color: '#fff'
+                color: '#000000'
             },
             headerLeft: <Icon
                 name='info-circle'
@@ -162,11 +163,11 @@ const AboutNavigator = createStackNavigator(
         initialRouteName: 'Gallery',
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#000000'
             },
-            headerTintColor: '#fff',
+            headerTintColor: '#000000',
             headerTitleStyle: {
-                color: '#fff'
+                color: '#000000'
             }
         }
     }
@@ -179,11 +180,11 @@ const HomeNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#000000'
             },
-            headerTintColor: '#fff',
+            headerTintColor: '#000000',
             headerTitleStyle: {
-                color: '#fff'
+                color: '#000000'
             },
             headerLeft: <Icon
                 name='home'
@@ -204,12 +205,13 @@ const CustomDrawerContentComponent = props => (
                 <View style={styles.drawerHeader}>
                     <View style={{flex: 1}}>
                         <Image 
-                        source={require("./images/logo.png")}
+                        source={require("./images/Starrynight1-2.png")}
                         style={styles.drawerImage}
+                        
                             />
                     </View>
-                    <View style={{flex: 2}}>
-                        <Text style={styles.drawerHeaderText}>NuCamp</Text>
+                    <View style={{flex: 3}}>
+                        <Text style={styles.drawerHeaderText}>SmallEnough.Art</Text>
                     </View>
                 </View>
                 <DrawerItems {...props} />
@@ -259,6 +261,7 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
+        /*
         Reservation: {
             screen: ReservationNavigator,
             navigationOptions: {
@@ -272,7 +275,7 @@ const MainNavigator = createDrawerNavigator(
                     />
                 )
             }
-        },
+        },*/
         Favorites: {
             screen: FavoritesNavigator,
             navigationOptions: {
@@ -386,7 +389,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     drawerHeader: {
-        backgroundColor: '#5637DD',
+        backgroundColor: '#000000',
         height: 140,
         alignItems: 'center',
         justifyContent: 'center',
