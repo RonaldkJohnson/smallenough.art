@@ -1,29 +1,29 @@
 export const PARTNERS = [
     {
         id: 0,
-        name: "Bootstrap Outfitters",
-        image: "/assets/images/bootstrap-logo.png",
+        name: "Purplered1",
+        image: "/assets/images/Purplered1.jpg",
         featured: false,
-        description: "Bootstrap Outfitters supplies you with the gear you need at prices you can't beat."
+        description: "test"
     },
     {
         id: 1,
-        name: "Git Out Expeditions",
-        image: "/assets/images/git-logo.png",
+        name: "Purplered1-2",
+        image: "/assets/images/Purplered1-2.jpg",
         featured: false,
-        description: "Join Git Out Expeditions to explore new horizons with a group of other adventurers!"
+        description: "test testing testing testing testing testing"
     },
     {
         id: 2,
-        name: "Mongo Fly Shop",
-        image: "/assets/images/mongo-logo.png",
+        name: "Octopus1-2",
+        image: "/assets/images/Octopus1-2.jpg",
         featured: false,
-        description: "Need a new fishing pole, a tacklebox, or flies of all kinds? Stop by Mongo Fly Shop."
+        description: "Test content testing testing"
     },
     {
         id: 3,
-        name: "Node Outdoor Apparel",
-        image: "/assets/images/node-logo.png",
+        name: "testworking",
+        image: "/assets/images/testworking.jpg",
         featured: true,
         description: "From polar fleeces to swimsuits, hiking boots to waders, a visit to Node will be sure to get you covered."
     }

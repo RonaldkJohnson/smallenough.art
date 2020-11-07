@@ -16,9 +16,9 @@ const mapStateToProps = state => {
 
 function Misson() {
     return (
-        <Card title="Our Misson">
+        <Card title="My Misson">
         <Text style={{margin: 10}}>
-        We present a curated database of the best campsites in the vast woods and backcountry of the World Wide Web Wilderness. We increase access to adventure for the public while promoting safe and respectful use of resources. The expert wilderness trekkers on our staff personally verify each campsite to make sure that they are up to our standards. We also present a platform for campers to share reviews on campsites they have visited with each other.
+       Hello, My name is Ron Johnson, I am the artist behind Smallenough.art! My mission is to share my artwork with the world, and to teach others to utilize art as they seek to overcome the trauma in there lives. I am a retired Marine, during my time of service and throughout my life I have encountered and had to deal with various traumas. For me painting has become an integeral part in coping with my PTSD and healing in general. My hope is that I can encouredge others to engage in various art mediums so they to can experence the thearpy that Art can bring to and through and despite there traumatic experiences.
         </Text>
         </Card>
 
