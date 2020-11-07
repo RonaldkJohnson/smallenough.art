@@ -31,11 +31,11 @@ export const addComments = comments => ({
     payload: comments
 });
 
-export const fetchCampsites = () => dispatch => {
+export const fetchPhotos = () => dispatch => {
 
-    dispatch(campsitesLoading());
+    dispatch(photosLoading());
 
-    return fetch(baseUrl + 'campsites')
+    return fetch(baseUrl + 'photos')
         .then(response => {
                 if (response.ok) {
                     return response;
@@ -50,22 +50,22 @@ export const fetchCampsites = () => dispatch => {
                 throw errMess;
             })
         .then(response => response.json())
-        .then(campsites => dispatch(addCampsites(campsites)))
-        .catch(error => dispatch(campsitesFailed(error.message)));
+        .then(photos => dispatch(addPhotos(photos)))
+        .catch(error => dispatch(photosFailed(error.message)));
 };
 
-export const campsitesLoading = () => ({
-    type: ActionTypes.CAMPSITES_LOADING
+export const photosLoading = () => ({
+    type: ActionTypes.PHOTOS_LOADING
 });
 
-export const campsitesFailed = errMess => ({
-    type: ActionTypes.CAMPSITES_FAILED,
+export const photosFailed = errMess => ({
+    type: ActionTypes.PHOTOS_FAILED,
     payload: errMess
 });
 
-export const addCampsites = campsites => ({
-    type: ActionTypes.ADD_CAMPSITES,
-    payload: campsites
+export const addPhotos = photos => ({
+    type: ActionTypes.ADD_PHOTOS,
+    payload: photos
 });
 
 export const fetchPromotions = () => dispatch => {
@@ -142,19 +142,19 @@ export const addPartners = partners => ({
     payload: partners
 });
 
-export const postFavorite = campsiteId => dispatch => {
+export const postFavorite = photoId => dispatch => {
     setTimeout(() => {
-        dispatch(addFavorite(campsiteId));
+        dispatch(addFavorite(photoId));
     }, 500);
 };
 
-export const addFavorite = campsiteId => ({
+export const addFavorite = photoId => ({
     type: ActionTypes.ADD_FAVORITE,
-    payload: campsiteId
+    payload: photoId
 });
 
-export const postComment = (campsiteId, rating, author, text) => dispatch => {
-    const newComment = { campsiteId, rating, author, text };
+export const postComment = (photoId, rating, author, text) => dispatch => {
+    const newComment = { photoId, rating, author, text };
     newComment.date = new Date().toISOString();
     setTimeout(() => {
         dispatch(addComment(newComment));
@@ -166,8 +166,8 @@ export const addComment = newComment => ({
     payload: newComment
 });
 
-export const deleteFavorite = campsiteId => ({
+export const deleteFavorite = photoId => ({
     type: ActionTypes.DELETE_FAVORITE,
-    payload: campsiteId
+    payload: photoId
 }); 
 

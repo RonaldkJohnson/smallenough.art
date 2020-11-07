@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "nucampsite",
-    "slug": "nucampsite",
+    "name": "smallenoughart",
+    "slug": "smallenoughart",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,12 +17,12 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "co.nucamp.nucampsite.student",
+      "bundleIdentifier": "smallenough.art",
       "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
-      "package": "co.nucamp.nucampsite.student",
+      "package": "smallenough.art",
       "versionCode": 1
     },
     "web": {

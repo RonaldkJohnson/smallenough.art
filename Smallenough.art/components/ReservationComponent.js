@@ -22,7 +22,7 @@ class Reservation extends Component {
     }
 
     static navigationOptions = {
-        title: 'Reserve Campsite'
+        title: 'Reserve Photo'
     }
 
     handleReservation() {
@@ -75,7 +75,7 @@ class Reservation extends Component {
 
             Notifications.scheduleNotificationAsync({
                 content: {
-                    title: 'Your Campsite Reservation Search',
+                    title: 'Your Photo Reservation Search',
                     body: `Search for ${date} requested`
                 },
                 trigger: null
@@ -150,7 +150,7 @@ class Reservation extends Component {
                             onPress={() => this.handleReservation()}
                             title='Search'
                             color='#5637DD'
-                            accessibilityLabel='Tap me to search for available campsites to reserve'
+                            accessibilityLabel='Tap me to search for available photos to reserve'
                         />
                     </View>
                 </Animatable.View>

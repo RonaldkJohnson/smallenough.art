@@ -1,4 +1,4 @@
-export const CAMPSITES = [
+export const PHOTOS = [
     {
         id: 0,
         name: "React Lake Campground",

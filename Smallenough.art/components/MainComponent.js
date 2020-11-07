@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
-import Directory from './DirectoryComponent';
+import Gallery from './GalleryComponent';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
-import CampsiteInfo from './CampsiteInfoComponent';
+import PhotoInfo from './PhotoInfoComponent';
 import Reservation from './ReservationComponent';
 import Favorites from './FavoritesComponent';
 import Login from './LoginComponent';
@@ -15,14 +15,14 @@ import { createAppContainer } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import SafeAreaView from 'react-native-safe-area-view';
 import { connect } from 'react-redux';
-import { fetchCampsites, fetchComments, fetchPromotions,
+import { fetchPhotos, fetchComments, fetchPromotions,
     fetchPartners } from '../redux/ActionCreators';
 import NetInfo from '@react-native-community/netinfo';
 
 
 
 const mapDispatchToProps = {
-    fetchCampsites,
+    fetchPhotos,
     fetchComments,
     fetchPromotions,
     fetchPartners
@@ -143,10 +143,10 @@ const AboutNavigator = createStackNavigator(
 );
 
 
-        const DirectoryNavigator = createStackNavigator(
+        const GalleryNavigator = createStackNavigator(
             {
-                Directory: { 
-                    screen: Directory,
+                Gallery: { 
+                    screen: Gallery,
                     navigationOptions: ({navigation}) => ({
                         headerLeft: <Icon
                             name='list'
@@ -156,10 +156,10 @@ const AboutNavigator = createStackNavigator(
                         />
                     })
                 },
-        CampsiteInfo: { screen: CampsiteInfo }
+        PhotoInfo: { screen: PhotoInfo }
     },
     {
-        initialRouteName: 'Directory',
+        initialRouteName: 'Gallery',
         defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#5637DD'
@@ -246,8 +246,8 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
-        Directory: {
-            screen: DirectoryNavigator,
+        Gallery: {
+            screen: GalleryNavigator,
             navigationOptions: {
                 drawerIcon: ({tintColor}) => (
                     <Icon
@@ -262,7 +262,7 @@ const MainNavigator = createDrawerNavigator(
         Reservation: {
             screen: ReservationNavigator,
             navigationOptions: {
-                drawerLabel: 'Reserve Campsite',
+                drawerLabel: 'Reserve Photo',
                 drawerIcon: ({tintColor}) => (
                     <Icon
                         name='tree'
@@ -328,7 +328,7 @@ const AppNavigator = createAppContainer(MainNavigator)
 class Main extends Component {
 
     componentDidMount() {
-        this.props.fetchCampsites();
+        this.props.fetchPhotos();
         this.props.fetchComments();
         this.props.fetchPromotions();
         this.props.fetchPartners();

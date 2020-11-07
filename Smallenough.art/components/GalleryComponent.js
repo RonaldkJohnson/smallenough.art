@@ -9,19 +9,19 @@ import * as Animatable from 'react-native-animatable';
 
 const mapStateToProps = state => {
     return {
-        campsites: state.campsites
+        photos: state.photos
     };
 };
 
-class Directory extends Component {
+class Gallery extends Component {
 
     static navigationOptions = {
-        title: 'Directory'
+        title: 'Gallery'
     }
 
     render() {
         const { navigate } = this.props.navigation;
-        const renderDirectoryItem = ({item}) => {
+        const renderGalleryItem = ({item}) => {
             return (
                
                 <Animatable.View animation='fadeInRightBig' duration={2000}>
@@ -29,31 +29,31 @@ class Directory extends Component {
                     title={item.name}
                     caption={item.description}
                     featured
-                    onPress={() => navigate('CampsiteInfo', { campsiteId: item.id })}
+                    onPress={() => navigate('PhotoInfo', { photoId: item.id })}
                     imageSrc={{uri: baseUrl + item.image}}
                     />
                 </Animatable.View>
             );
         };
 
-        if (this.props.campsites.isLoading) {
+        if (this.props.photos.isLoading) {
             return <Loading />;
         }
-        if (this.props.campsites.errMess) {
+        if (this.props.photos.errMess) {
             return (
                 <View>
-                    <Text>{this.props.campsites.errMess}</Text>
+                    <Text>{this.props.photos.errMess}</Text>
                 </View>
             );
         }
         return (
             <FlatList
-                data={this.props.campsites.campsites}
-                renderItem={renderDirectoryItem}
+                data={this.props.photos.photos}
+                renderItem={renderGalleryItem}
                 keyExtractor={item => item.id.toString()}
             />
         );
     }
 }
 
-export default connect(mapStateToProps)(Directory);
+export default connect(mapStateToProps)(Gallery);
