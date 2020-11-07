@@ -11,13 +11,13 @@ import * as Animatable from 'react-native-animatable';
 
 const mapStateToProps = state => {
     return {
-        photoGallery: state.photoGallery,
+        campsites: state.campsites,
         favorites: state.favorites
     };
 };
 
 const mapDispatchToProps = {
-    deleteFavorite: photoGalleryId => deleteFavorite(photoGalleryId)
+    deleteFavorite: campsiteId => deleteFavorite(campsiteId)
 };
 
 
@@ -38,7 +38,7 @@ class Favorites extends Component {
                             onPress={() =>
                                 Alert.alert(
                                     'Delete Favorite?',
-                                    'Are you sure you wish to delete the favorite photoGallery ' +
+                                    'Are you sure you wish to delete the favorite campsite ' +
                                         item.name +
                                         '?',
                                     [
@@ -65,28 +65,28 @@ class Favorites extends Component {
                             title={item.name}
                             subtitle={item.description}
                             leftAvatar={{source: {uri: baseUrl + item.image}}}
-                            onPress={() => navigate('photoGalleryInfo', {photoGalleryId: item.id})}
+                            onPress={() => navigate('CampsiteInfo', {campsiteId: item.id})}
                         />
                     </View>
                 </SwipeRow>
             );
         };
 
-        if (this.props.photoGallery.isLoading) {
+        if (this.props.campsites.isLoading) {
             return <Loading />;
         }
-        if (this.props.photoGallery.errMess) {
+        if (this.props.campsites.errMess) {
             return (
                 <View>
-                    <Text>{this.props.photoGallery.errMess}</Text>
+                    <Text>{this.props.campsites.errMess}</Text>
                 </View>
             );
         }
         return (
             <Animatable.View animation="fadeInRightBig" duration={2000}>
             <FlatList
-                data={this.props.photoGallery.photoGallery.filter(
-                    photoGallery => this.props.favorites.includes(photoGallery.id)
+                data={this.props.campsites.campsites.filter(
+                    campsite => this.props.favorites.includes(campsite.id)
                 )}
                 renderItem={renderFavoriteItem}
                 keyExtractor={item => item.id.toString()}

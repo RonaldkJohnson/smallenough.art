@@ -11,20 +11,20 @@ import * as Animatable from 'react-native-animatable';
 
 const mapStateToProps = state => {
     return {
-        photogallery: state.photogallery,
+        campsites: state.campsites,
         comments: state.comments,
         favorites: state.favorites
     };
 };
 
 const mapDispatchToProps = {
-    postFavorite: photogalleryId => (postFavorite(photogalleryId)),
-    postComment: (photogalleryId, rating, author, text) => postComment(photogalleryId, rating, author, text)
+    postFavorite: campsiteId => (postFavorite(campsiteId)),
+    postComment: (campsiteId, rating, author, text) => postComment(campsiteId, rating, author, text)
 };
 
-function Renderphotogallery(props) {
+function RenderCampsite(props) {
 
-    const { photogallery } = props;
+    const { campsite } = props;
 
     const view = React.createRef();
 
@@ -42,7 +42,7 @@ function Renderphotogallery(props) {
             if (recognizeDrag(gestureState)) {
                 Alert.alert(
                     'Add Favorite',
-                    'Are you sure you wish to add ' + photogallery.name + ' to favorites?',
+                    'Are you sure you wish to add ' + campsite.name + ' to favorites?',
                     [
                         {
                             text: 'Cancel',
@@ -65,7 +65,7 @@ function Renderphotogallery(props) {
         }
     });
 
-    const sharephotogallery = (title, message, url) => {
+    const shareCampsite = (title, message, url) => {
         Share.share({
             title: title,
             message: `${title}: ${message} ${url}`,
@@ -75,7 +75,7 @@ function Renderphotogallery(props) {
         });
     };
 
-    if (photogallery) {
+    if (campsite) {
         return (
             <Animatable.View
                 animation='fadeInDown'
@@ -84,11 +84,11 @@ function Renderphotogallery(props) {
                 ref={view}
                 {...panResponder.panHandlers}>
                 <Card
-                    featuredTitle={photogallery.name}
-                    image={{ uri: baseUrl + photogallery.image }}
+                    featuredTitle={campsite.name}
+                    image={{ uri: baseUrl + campsite.image }}
                 >
                     <Text style={{ margin: 10 }}>
-                        {photogallery.description}
+                        {campsite.description}
                     </Text>
                     <View style={styles.cardRow}>
                         <Icon
@@ -114,7 +114,7 @@ function Renderphotogallery(props) {
                             color='#5637DD'
                             raised
                             reverse
-                            onPress={() => sharephotogallery(photogallery.name, photogallery.description, baseUrl + photogallery.image)} 
+                            onPress={() => shareCampsite(campsite.name, campsite.description, baseUrl + campsite.image)} 
                         />
                     </View>
                 </Card>
@@ -155,7 +155,7 @@ function RenderComments({ comments }) {
     );
 }
 
-class photogalleryInfo extends Component {
+class CampsiteInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -171,8 +171,8 @@ class photogalleryInfo extends Component {
         this.setState({ showModal: !this.state.showModal });
     }
 
-    handleComment(photogalleryId) {
-        this.props.postComment(photogalleryId, this.state.rating, this.state.author, this.state.text);
+    handleComment(campsiteId) {
+        this.props.postComment(campsiteId, this.state.rating, this.state.author, this.state.text);
         this.toggleModal();
         console.log(this.state.text);
     }
@@ -186,23 +186,23 @@ class photogalleryInfo extends Component {
         });
     }
 
-    markFavorite(photogalleryId) {
-        this.props.postFavorite(photogalleryId);
+    markFavorite(campsiteId) {
+        this.props.postFavorite(campsiteId);
     }
 
     static navigationOptions = {
-        title: 'photogallery Information'
+        title: 'Campsite Information'
     }
 
     render() {
-        const photogalleryId = this.props.navigation.getParam('photogalleryId');
-        const photogallery = this.props.photogallery.photogallery.filter(photogallery => photogallery.id === photogalleryId)[0];
-        const comments = this.props.comments.comments.filter(comment => comment.photogalleryId === photogalleryId);
+        const campsiteId = this.props.navigation.getParam('campsiteId');
+        const campsite = this.props.campsites.campsites.filter(campsite => campsite.id === campsiteId)[0];
+        const comments = this.props.comments.comments.filter(comment => comment.campsiteId === campsiteId);
         return (
             <ScrollView>
-                <Renderphotogallery photogallery={photogallery}
-                    favorite={this.props.favorites.includes(photogalleryId)}
-                    markFavorite={() => this.markFavorite(photogalleryId)}
+                <RenderCampsite campsite={campsite}
+                    favorite={this.props.favorites.includes(campsiteId)}
+                    markFavorite={() => this.markFavorite(campsiteId)}
                     onShowModal={() => this.toggleModal()}
                 />
                 <RenderComments comments={comments} />
@@ -237,7 +237,7 @@ class photogalleryInfo extends Component {
                         <View style={{ margin: 10 }}>
                             <Button
                                 onPress={() => {
-                                    this.handleComment(photogalleryId)
+                                    this.handleComment(campsiteId)
 
                                     this.resetForm()
                                 }}
@@ -280,4 +280,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(photogalleryInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(CampsiteInfo);
