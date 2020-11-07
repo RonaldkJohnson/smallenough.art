@@ -16,9 +16,9 @@ const mapStateToProps = state => {
 
 function Misson() {
     return (
-        <Card title="Our Misson">
+        <Card title="My Misson">
         <Text style={{margin: 10}}>
-        We present a curated database of the best campsites in the vast woods and backcountry of the World Wide Web Wilderness. We increase access to adventure for the public while promoting safe and respectful use of resources. The expert wilderness trekkers on our staff personally verify each campsite to make sure that they are up to our standards. We also present a platform for campers to share reviews on campsites they have visited with each other.
+         I am a local abstract Artist. Art has become a means of healing for me. I am a vetran of our United States Marine Corp. For me my art has been a venue to engage with some of the more complex feelings and emotions and experience from my time in service. With my PTSD where I once dreamed in violence I now dream in color.
         </Text>
         </Card>
 

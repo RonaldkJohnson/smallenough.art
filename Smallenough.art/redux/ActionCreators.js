@@ -31,11 +31,11 @@ export const addComments = comments => ({
     payload: comments
 });
 
-export const fetchCampsites = () => dispatch => {
+export const fetchphotogallery = () => dispatch => {
 
-    dispatch(campsitesLoading());
+    dispatch(photogalleryLoading());
 
-    return fetch(baseUrl + 'campsites')
+    return fetch(baseUrl + 'photogallery')
         .then(response => {
                 if (response.ok) {
                     return response;
@@ -50,22 +50,22 @@ export const fetchCampsites = () => dispatch => {
                 throw errMess;
             })
         .then(response => response.json())
-        .then(campsites => dispatch(addCampsites(campsites)))
-        .catch(error => dispatch(campsitesFailed(error.message)));
+        .then(photogallery => dispatch(addphotogallery(photogallery)))
+        .catch(error => dispatch(photogalleryFailed(error.message)));
 };
 
-export const campsitesLoading = () => ({
-    type: ActionTypes.CAMPSITES_LOADING
+export const photogalleryLoading = () => ({
+    type: ActionTypes.photogallery_LOADING
 });
 
-export const campsitesFailed = errMess => ({
-    type: ActionTypes.CAMPSITES_FAILED,
+export const photogalleryFailed = errMess => ({
+    type: ActionTypes.photogallery_FAILED,
     payload: errMess
 });
 
-export const addCampsites = campsites => ({
-    type: ActionTypes.ADD_CAMPSITES,
-    payload: campsites
+export const addphotogallery = photogallery => ({
+    type: ActionTypes.ADD_photogallery,
+    payload: photogallery
 });
 
 export const fetchPromotions = () => dispatch => {
@@ -142,19 +142,19 @@ export const addPartners = partners => ({
     payload: partners
 });
 
-export const postFavorite = campsiteId => dispatch => {
+export const postFavorite = photogalleryId => dispatch => {
     setTimeout(() => {
-        dispatch(addFavorite(campsiteId));
+        dispatch(addFavorite(photogalleryId));
     }, 500);
 };
 
-export const addFavorite = campsiteId => ({
+export const addFavorite = photogalleryId => ({
     type: ActionTypes.ADD_FAVORITE,
-    payload: campsiteId
+    payload: photogalleryId
 });
 
-export const postComment = (campsiteId, rating, author, text) => dispatch => {
-    const newComment = { campsiteId, rating, author, text };
+export const postComment = (photogalleryId, rating, author, text) => dispatch => {
+    const newComment = { photogalleryId, rating, author, text };
     newComment.date = new Date().toISOString();
     setTimeout(() => {
         dispatch(addComment(newComment));
@@ -166,8 +166,8 @@ export const addComment = newComment => ({
     payload: newComment
 });
 
-export const deleteFavorite = campsiteId => ({
+export const deleteFavorite = photogalleryId => ({
     type: ActionTypes.DELETE_FAVORITE,
-    payload: campsiteId
+    payload: photogalleryId
 }); 
 

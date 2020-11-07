@@ -150,7 +150,7 @@ class Reservation extends Component {
                             onPress={() => this.handleReservation()}
                             title='Search'
                             color='#5637DD'
-                            accessibilityLabel='Tap me to search for available campsites to reserve'
+                            accessibilityLabel='Tap me to search for available photo Gallery to reserve'
                         />
                     </View>
                 </Animatable.View>

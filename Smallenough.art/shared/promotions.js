@@ -1,9 +1,9 @@
 export const PROMOTIONS = [
     {
         id: 0,
-        name: "Mountain Adventure",
-        image: "/assets/images/breadcrumb-trail.jpg",
+        name: "The Purple Octopus",
+        image: "/assets/images/Octopus1-2.jpg",
         featured: true,
-        description: "Book a 5-day mountain trek with a seasoned outdoor guide! Fly fishing equipment and lessons provided."
+        description: "This multi-faceted pour took place over 7 days. the purples were used to depict the depths of the ocean."
     }
 ]
